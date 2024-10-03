@@ -130,11 +130,13 @@ class Main
         Scanner scanner = new Scanner(System.in);
         int nodeCount = Integer.parseInt(scanner.nextLine().split(" ")[0]);
         //int nodeCount = 5; //troubleshooting
-        String arrLine = scanner.nextLine(); //troubleshooting
-        //String arrLine = "10 20 30 40 70"; //troubleshooting
-        String[] strArr = arrLine.split(" ");
-        for (int i = 0; i < nodeCount; i++) {
-            heapArray.add(Integer.parseInt(strArr[i]));
+        if(nodeCount > 0) {
+            String arrLine = scanner.nextLine(); //troubleshooting
+            //String arrLine = "10 20 30 40 70"; //troubleshooting
+            String[] strArr = arrLine.split(" ");
+            for (int i = 0; i < nodeCount; i++) {
+                heapArray.add(Integer.parseInt(strArr[i]));
+            }
         }
 
         //Test Output:

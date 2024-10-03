@@ -21,7 +21,7 @@ class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
         System.out.println("Heapify the Array");
-        for (int i = heapArray.size()/2; i >= 0; i--) {
+        for (int i = (heapArray.size()-1)/2; i >= 0; i--) {
             int k = i;
             int v = heapArray.get(k);
             //System.out.println("k: " + k + " i: " + i + " v: " + v);

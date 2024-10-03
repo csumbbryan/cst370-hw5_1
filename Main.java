@@ -55,6 +55,21 @@ class Main
     public static boolean heapCheck(ArrayList<Integer> heapArray) {
         boolean isHeap = true;
         System.out.println("Check if Array is a Heap");
+
+        for (int i = (heapArray.size()-1) / 2; i >= 0; i--) {
+            if(2*i + 1 > heapArray.size()-1) {
+                if (heapArray.get(2*i) > heapArray.get(i)) {
+                    isHeap = false;
+                    break;
+                }
+            } else {
+                if (heapArray.get(i) >= heapArray.get(2*i) && heapArray.get(i) >= heapArray.get(2*i + 1)) {
+                    isHeap = false;
+                    break;
+                }
+            }
+        }
+        /*
         for (int i = (heapArray.size() -1)/2; i >= 0; i--) {
             int k = i;
             int v = heapArray.get(k);
@@ -73,7 +88,7 @@ class Main
                     k = j;
                 }
             }
-        }
+        }*/
         return isHeap;
     }
 

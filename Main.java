@@ -76,6 +76,7 @@ class Main
         if(heapArray.size() > 1) {
             System.out.println(heapArray.get(1));
         } else {
+            System.out.println(heapArray.size());
             System.out.println("No Max");
         }
     }

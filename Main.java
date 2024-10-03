@@ -48,7 +48,7 @@ class Main
                 heapArray.set(k, v);
             }
         }
-        System.out.println(heapArray);
+        heapDisplay(heapArray);
         return heapArray;
     }
 
@@ -108,7 +108,8 @@ class Main
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {
         heapArray.add(node);
-        System.out.println("insert node, pre heapify: " + heapArray);
+        System.out.println("insert node, pre heapify: ");
+        heapDisplay(heapArray);
         if(!heapCheck(heapArray)) {
             heapify(heapArray);
         }
@@ -176,7 +177,7 @@ class Main
                     insertNode(heapArray, Integer.parseInt(commandArr[1]));
                     break;
                 case "deleteMax":
-                    deleteNode(heapArray, heapArray.get(0));
+                    deleteNode(heapArray, heapArray.get(1));
                     break;
                 case "delete":
                     deleteNode(heapArray, Integer.parseInt(commandArr[1]));

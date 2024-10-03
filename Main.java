@@ -99,7 +99,7 @@ class Main
     public static void heapDisplay(ArrayList<Integer> heapArray) {
         System.out.println("Display the full heap in order");
         String heapOutput = "";
-        for(int i = 1; i < heapArray.size() - 2; i++) {
+        for(int i = 1; i <= heapArray.size() - 2; i++) {
             heapOutput += heapArray.get(i) + " ";
         }
         heapOutput += heapArray.get(heapArray.size() - 1);

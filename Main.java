@@ -136,7 +136,7 @@ class Main
         }
 
         //Test Output:
-        System.out.println(heapArray);
+        //System.out.println(heapArray);
 
         //Heapify the array
         if(!heapCheck(heapArray)) {

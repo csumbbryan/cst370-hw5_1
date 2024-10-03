@@ -63,7 +63,7 @@ class Main
                     break;
                 }
             } else {
-                if (heapArray.get(i) >= heapArray.get(2*i) && heapArray.get(i) >= heapArray.get(2*i + 1)) {
+                if (!(heapArray.get(i) >= heapArray.get(2*i) && heapArray.get(i) >= heapArray.get(2*i + 1))) {
                     isHeap = false;
                     break;
                 }

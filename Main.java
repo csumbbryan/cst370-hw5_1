@@ -21,12 +21,12 @@ class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
         System.out.println("Heapify the Array");
-        for (int i = (heapArray.size()-1)/2; i >= 0; i--) {
+        for (int i = (heapArray.size()-1)/2; i >= 1; i--) {
             int k = i;
             int v = heapArray.get(k);
             //System.out.println("k: " + k + " i: " + i + " v: " + v);
             boolean isHeap = false;
-            while (!isHeap && 2*k <= heapArray.size() - 1) {
+            while (!isHeap && 2*k <= heapArray.size()-1) {
                 int j = 2 * k;
                 //System.out.println(" j: " + j);
                 if(j < heapArray.size() - 1) {
@@ -56,7 +56,7 @@ class Main
         boolean isHeap = true;
         System.out.println("Check if Array is a Heap");
 
-        for (int i = (heapArray.size()-1) / 2; i >= 0; i--) {
+        for (int i = (heapArray.size()-1) / 2; i >= 1; i--) {
             if(2*i + 1 > heapArray.size()-1) {
                 if (heapArray.get(2*i) > heapArray.get(i)) {
                     isHeap = false;
@@ -111,7 +111,7 @@ class Main
     }
 
     public static void deleteNode(ArrayList<Integer> heapArray, int node) {
-        int last = heapArray.get(heapArray.size() - 1);
+        int last = heapArray.get(heapArray.size()-1);
         if(node != last) {
             heapArray.set(heapArray.indexOf(last), node);
             heapArray.set(heapArray.indexOf(node), last);
@@ -128,6 +128,7 @@ class Main
         // Develop your program here.
         // The following is just a sample statement and and you need to replace it with your code
         ArrayList<Integer> heapArray = new ArrayList<>();
+        heapArray.add(null);
 
         //Read in Values
         Scanner scanner = new Scanner(System.in);

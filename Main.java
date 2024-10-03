@@ -21,7 +21,7 @@ class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
         System.out.println("Heapify the Array");
-        return null;
+        return heapArray;
     }
 
     public static boolean heapCheck(ArrayList<Integer> heapArray) {

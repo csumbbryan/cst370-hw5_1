@@ -19,6 +19,35 @@ import java.util.Scanner;
 
 class Main
 {
+    public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
+        System.out.println("Heapify the Array");
+        return null;
+    }
+
+    public static boolean heapCheck(ArrayList<Integer> heapArray) {
+        boolean isHeap = false;
+        System.out.println("Check if Array is a Heap");
+        return isHeap;
+    }
+
+    public static void displayMax(ArrayList<Integer> heapArray) {
+        System.out.println("Display the Max node");
+    }
+
+    public static void heapDisplay(ArrayList<Integer> heapArray) {
+        System.out.println("Display th full heap in order");
+    }
+
+    public static void insertNode(ArrayList<Integer> heapArray, int node) {
+        System.out.println("Insert a node into Heap and ensure is still a heap. Node: " + node);
+    }
+
+    public static void deleteNode(ArrayList<Integer> heapArray, int node) {
+        System.out.println("Delete a node from the Heap. Node: " + node);
+    }
+
+
+
     public static void main(String[] args) {
 
         // Develop your program here.
@@ -37,9 +66,40 @@ class Main
         //Test Output:
         System.out.println(heapArray);
 
-        //Process the commands
-
         //Heapify the array
+        if(!heapCheck(heapArray)) {
+            System.out.println("This is NOT a heap.");
+            heapArray = heapify(heapArray); // do we need to clone instead?
+        } else {
+            System.out.println("This is a heap.");
+        }
+
+
+
+        //Process the commands
+        int commandCount = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < commandCount; i++) {
+            String command = scanner.nextLine();
+            String[] commandArr = command.split(" ");
+            switch (commandArr[0]) {
+                case "displayMax":
+                    displayMax(heapArray);
+                    break;
+                case "display":
+                    heapDisplay(heapArray);
+                    break;
+                case "insert":
+                    insertNode(heapArray, Integer.parseInt(commandArr[1]));
+                    break;
+                case "deleteMax":
+                    deleteNode(heapArray, heapArray.get(0));
+                    break;
+                case "delete":
+                    deleteNode(heapArray, Integer.parseInt(commandArr[1]));
+            }
+        }
+
+
 
         //Insert nodes (then heapify)
 
@@ -47,9 +107,6 @@ class Main
 
         //Delete the root node (then heapify)
 
-
-        
-        System.out.println("Hello world!");
     }
 }
 

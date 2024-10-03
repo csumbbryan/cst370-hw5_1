@@ -78,7 +78,7 @@ class Main
     }
 
     public static void displayMax(ArrayList<Integer> heapArray) {
-        System.out.println("Display the Max node");
+        System.out.println(heapArray.get(0));
     }
 
     public static void heapDisplay(ArrayList<Integer> heapArray) {
@@ -87,10 +87,19 @@ class Main
     }
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {
+        heapArray.add(node);
+        heapify(heapArray);
         System.out.println("Insert a node into Heap and ensure is still a heap. Node: " + node);
     }
 
     public static void deleteNode(ArrayList<Integer> heapArray, int node) {
+        int last = heapArray.getLast();
+        if(node != last) {
+            heapArray.set(heapArray.indexOf(last), node);
+            heapArray.set(heapArray.indexOf(node), last);
+        }
+        heapArray.remove(node);
+        heapify(heapArray);
         System.out.println("Delete a node from the Heap. Node: " + node);
     }
 

@@ -20,7 +20,7 @@ import java.util.Scanner;
 class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
-        System.out.println("Heapify the Array");
+        //System.out.println("Heapify the Array");
         for (int i = (heapArray.size()-1)/2; i >= 1; i--) {
             int k = i;
             int v = heapArray.get(k);
@@ -48,13 +48,13 @@ class Main
                 heapArray.set(k, v);
             }
         }
-        heapDisplay(heapArray);
+        //heapDisplay(heapArray);
         return heapArray;
     }
 
     public static boolean heapCheck(ArrayList<Integer> heapArray) {
         boolean isHeap = true;
-        System.out.println("Check if Array is a Heap");
+        //System.out.println("Check if Array is a Heap");
 
         for (int i = (heapArray.size()-1) / 2; i >= 1; i--) {
             if(2*i + 1 > heapArray.size()-1) {
@@ -69,35 +69,19 @@ class Main
                 }
             }
         }
-        /*
-        for (int i = (heapArray.size() -1)/2; i >= 0; i--) {
-            int k = i;
-            int v = heapArray.get(k);
-            //System.out.println("k: " + k + " i: " + i + " v: " + v);
-            while (2 * k <= heapArray.size()) {
-                int j = 2 * k;
-                if(j < heapArray.size() - 1) {
-                    if (heapArray.get(j) < heapArray.get(j + 1)) {
-                        j = j+1;
-                    }
-                }
-                if (!(v >= heapArray.get(j))) {
-                    isHeap = false;
-                    break;
-                } else {
-                    k = j;
-                }
-            }
-        }*/
         return isHeap;
     }
 
     public static void displayMax(ArrayList<Integer> heapArray) {
-        System.out.println(heapArray.get(1));
+        if(heapArray.size() > 1) {
+            System.out.println(heapArray.get(1));
+        } else {
+            System.out.println("No Max");
+        }
     }
 
     public static void heapDisplay(ArrayList<Integer> heapArray) {
-        System.out.println("Display the full heap in order");
+        //System.out.println("Display the full heap in order");
         String heapOutput = "";
         for(int i = 1; i <= heapArray.size() - 2; i++) {
             heapOutput += heapArray.get(i) + " ";
@@ -108,27 +92,27 @@ class Main
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {
         heapArray.add(node);
-        System.out.println("insert node, pre heapify: ");
-        heapDisplay(heapArray);
+        //System.out.println("insert node, pre heapify: ");
+        //heapDisplay(heapArray);
         if(!heapCheck(heapArray)) {
             heapify(heapArray);
         }
-        System.out.println("Insert a node into Heap and ensure is still a heap. Node: " + node);
+        //System.out.println("Insert a node into Heap and ensure is still a heap. Node: " + node);
     }
 
     public static void deleteNode(ArrayList<Integer> heapArray, int node) {
         int last = heapArray.get(heapArray.size()-1);
-        System.out.println("Last: " + last);
-        System.out.println("Node: " + node);
-        System.out.println("Index of Last: " + heapArray.indexOf(last));
-        System.out.println("Index of Node: " + heapArray.indexOf(node));
+        //System.out.println("Last: " + last);
+        //System.out.println("Node: " + node);
+        //System.out.println("Index of Last: " + heapArray.indexOf(last));
+        //System.out.println("Index of Node: " + heapArray.indexOf(node));
         if(node != last) {
             heapArray.set(heapArray.indexOf(last), node);
             heapArray.set(heapArray.indexOf(node), last);
         }
         heapArray.remove(heapArray.indexOf(node));
         heapify(heapArray);
-        System.out.println("Delete a node from the Heap. Node: " + node);
+        //System.out.println("Delete a node from the Heap. Node: " + node);
     }
 
 
@@ -161,8 +145,6 @@ class Main
         } else {
             System.out.println("This is a heap.");
         }
-
-
 
         //Process the commands
         int commandCount = Integer.parseInt(scanner.nextLine()); //troubleshooting

@@ -26,7 +26,7 @@ class Main
             int v = heapArray.get(k);
             //System.out.println("k: " + k + " i: " + i + " v: " + v);
             boolean isHeap = false;
-            while (!isHeap && 2*k <= heapArray.size()) {
+            while (!isHeap && 2*k <= heapArray.size() - 1) {
                 int j = 2 * k;
                 //System.out.println(" j: " + j);
                 if(j < heapArray.size() - 1) {

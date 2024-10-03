@@ -93,7 +93,7 @@ class Main
     }
 
     public static void deleteNode(ArrayList<Integer> heapArray, int node) {
-        int last = heapArray.getLast();
+        int last = heapArray.get(heapArray.size() - 1);
         if(node != last) {
             heapArray.set(heapArray.indexOf(last), node);
             heapArray.set(heapArray.indexOf(node), last);

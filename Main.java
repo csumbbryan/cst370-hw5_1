@@ -98,7 +98,7 @@ class Main
             heapArray.set(heapArray.indexOf(last), node);
             heapArray.set(heapArray.indexOf(node), last);
         }
-        heapArray.remove(node);
+        heapArray.remove(heapArray.indexOf(node));
         heapify(heapArray);
         System.out.println("Delete a node from the Heap. Node: " + node);
     }

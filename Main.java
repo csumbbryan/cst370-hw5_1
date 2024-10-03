@@ -21,6 +21,26 @@ class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
         System.out.println("Heapify the Array");
+        for (int i = heapArray.size()/2; i <= 1; i--) {
+            int k = i;
+            int v = heapArray.get(i);
+            boolean isHeap = false;
+            while (!isHeap && 2*k <= heapArray.size()) {
+                int j = 2 * k;
+                if(j < heapArray.size()) {
+                    if (heapArray.get(j) < heapArray.get(j + 1)) {
+                        j = j+1;
+                    }
+                }
+                if(v >= heapArray.get(j)) {
+                    isHeap = true;
+                } else {
+                    heapArray.set(k, heapArray.get(j));
+                    k = j;
+                }
+                heapArray.set(k, v);
+            }
+        }
         return heapArray;
     }
 
@@ -35,7 +55,8 @@ class Main
     }
 
     public static void heapDisplay(ArrayList<Integer> heapArray) {
-        System.out.println("Display th full heap in order");
+        System.out.println("Display the full heap in order");
+        System.out.println(heapArray);
     }
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {

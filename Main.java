@@ -21,26 +21,34 @@ class Main
 {
     public static ArrayList<Integer> heapify(ArrayList<Integer> heapArray) {
         System.out.println("Heapify the Array");
-        for (int i = heapArray.size()/2; i <= 1; i--) {
+        for (int i = heapArray.size()/2; i >= 0; i--) {
             int k = i;
-            int v = heapArray.get(i);
+            int v = heapArray.get(k);
+            //System.out.println("k: " + k + " i: " + i + " v: " + v);
             boolean isHeap = false;
             while (!isHeap && 2*k <= heapArray.size()) {
                 int j = 2 * k;
-                if(j < heapArray.size()) {
+                System.out.println(" j: " + j);
+                if(j < heapArray.size() - 1) {
+                    //System.out.println("Heap Array Size (outer loop): " + heapArray.size());
                     if (heapArray.get(j) < heapArray.get(j + 1)) {
+                        //System.out.println("Inner loop. Heap Array at j: " + heapArray.get(j) + " Heap Array at j + 1: " + heapArray.get(j+1));
                         j = j+1;
                     }
                 }
                 if(v >= heapArray.get(j)) {
+                    //System.out.println("Heap Array check. v: " + v + " heapArray at j: " + heapArray.get(j));
                     isHeap = true;
                 } else {
+                    //System.out.println("Heap array pre set if not heap. at k: " + heapArray.get(k) + " at j: " + heapArray.get(j));
                     heapArray.set(k, heapArray.get(j));
                     k = j;
                 }
+                //System.out.println("Heap array set at end. k: " + heapArray.get(k) + " v: " + v);
                 heapArray.set(k, v);
             }
         }
+        System.out.println(heapArray);
         return heapArray;
     }
 
@@ -78,7 +86,9 @@ class Main
         //Read in Values
         Scanner scanner = new Scanner(System.in);
         int nodeCount = Integer.parseInt(scanner.nextLine().split(" ")[0]);
-        String arrLine = scanner.nextLine();
+        //int nodeCount = 5; //troubleshooting
+        String arrLine = scanner.nextLine(); //troubleshooting
+        //String arrLine = "10 20 30 40 70"; //troubleshooting
         String[] strArr = arrLine.split(" ");
         for (int i = 0; i < nodeCount; i++) {
             heapArray.add(Integer.parseInt(strArr[i]));
@@ -98,7 +108,8 @@ class Main
 
 
         //Process the commands
-        int commandCount = Integer.parseInt(scanner.nextLine());
+        int commandCount = Integer.parseInt(scanner.nextLine()); //troubleshooting
+        //int commandCount = 0; //troubleshooting
         for (int i = 0; i < commandCount; i++) {
             String command = scanner.nextLine();
             String[] commandArr = command.split(" ");

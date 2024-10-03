@@ -55,7 +55,7 @@ class Main
     public static boolean heapCheck(ArrayList<Integer> heapArray) {
         boolean isHeap = true;
         System.out.println("Check if Array is a Heap");
-        for (int i = heapArray.size()/2; i >= 0; i--) {
+        for (int i = (heapArray.size() -1)/2; i >= 0; i--) {
             int k = i;
             int v = heapArray.get(k);
             //System.out.println("k: " + k + " i: " + i + " v: " + v);

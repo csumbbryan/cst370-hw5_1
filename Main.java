@@ -61,10 +61,16 @@ class Main
             //System.out.println("k: " + k + " i: " + i + " v: " + v);
             while (2 * k <= heapArray.size()) {
                 int j = 2 * k;
+                if(j < heapArray.size() - 1) {
+                    if (heapArray.get(j) < heapArray.get(j + 1)) {
+                        j = j+1;
+                    }
+                }
                 if (!(v >= heapArray.get(j))) {
-                    //System.out.println("Heap Array check. v: " + v + " heapArray at j: " + heapArray.get(j));
                     isHeap = false;
                     break;
+                } else {
+                    k = j;
                 }
             }
         }

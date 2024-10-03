@@ -93,12 +93,17 @@ class Main
     }
 
     public static void displayMax(ArrayList<Integer> heapArray) {
-        System.out.println(heapArray.get(0));
+        System.out.println(heapArray.get(1));
     }
 
     public static void heapDisplay(ArrayList<Integer> heapArray) {
         System.out.println("Display the full heap in order");
-        System.out.println(heapArray);
+        String heapOutput = "";
+        for(int i = 1; i < heapArray.size() - 2; i++) {
+            heapOutput += heapArray.get(i) + " ";
+        }
+        heapOutput += heapArray.get(heapArray.size() - 1);
+        System.out.println(heapOutput);
     }
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {

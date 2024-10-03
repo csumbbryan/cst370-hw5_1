@@ -89,7 +89,9 @@ class Main
     public static void insertNode(ArrayList<Integer> heapArray, int node) {
         heapArray.add(node);
         System.out.println("insert node, pre heapify: " + heapArray);
-        heapify(heapArray);
+        if(!heapCheck(heapArray)) {
+            heapify(heapArray);
+        }
         System.out.println("Insert a node into Heap and ensure is still a heap. Node: " + node);
     }
 

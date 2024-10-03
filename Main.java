@@ -28,7 +28,7 @@ class Main
             boolean isHeap = false;
             while (!isHeap && 2*k <= heapArray.size()) {
                 int j = 2 * k;
-                System.out.println(" j: " + j);
+                //System.out.println(" j: " + j);
                 if(j < heapArray.size() - 1) {
                     //System.out.println("Heap Array Size (outer loop): " + heapArray.size());
                     if (heapArray.get(j) < heapArray.get(j + 1)) {
@@ -53,8 +53,21 @@ class Main
     }
 
     public static boolean heapCheck(ArrayList<Integer> heapArray) {
-        boolean isHeap = false;
+        boolean isHeap = true;
         System.out.println("Check if Array is a Heap");
+        for (int i = heapArray.size()/2; i >= 0; i--) {
+            int k = i;
+            int v = heapArray.get(k);
+            //System.out.println("k: " + k + " i: " + i + " v: " + v);
+            while (2 * k <= heapArray.size()) {
+                int j = 2 * k;
+                if (!(v >= heapArray.get(j))) {
+                    //System.out.println("Heap Array check. v: " + v + " heapArray at j: " + heapArray.get(j));
+                    isHeap = false;
+                    break;
+                }
+            }
+        }
         return isHeap;
     }
 

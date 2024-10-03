@@ -119,6 +119,7 @@ class Main
     public static void deleteNode(ArrayList<Integer> heapArray, int node) {
         int last = heapArray.get(heapArray.size()-1);
         System.out.println("Last: " + last);
+        System.out.println("Node: " + node);
         System.out.println("Index of Last: " + heapArray.indexOf(last));
         System.out.println("Index of Node: " + heapArray.indexOf(node));
         if(node != last) {

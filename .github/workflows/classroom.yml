@@ -67,7 +67,7 @@ jobs:
         expected-output: |
           This is NOT a heap.
           100 50 99 22 44 88 77 2 11 5 3 66
-           99
+          99
         comparison-method: contains
         timeout: 10
     - name: Autograding Reporter

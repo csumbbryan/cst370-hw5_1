@@ -93,6 +93,7 @@ class Main
     }
 
     public static void insertNode(ArrayList<Integer> heapArray, int node) {
+        //TODO: Add functionality for parent check instead of full heapCheck?
         heapArray.add(node);
         //System.out.println("insert node, pre heapify: ");
         //heapDisplay(heapArray);

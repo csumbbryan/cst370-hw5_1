@@ -9,9 +9,11 @@
 
 // Finish the head comment with Abstract, Name, and Date.
 /*
- * Abstract: Describe the main ideas of the program.
- * Name: Write your name
- * Date: MM/DD/YYYY
+ * Abstract: Program accepts input from a user in the form of heap and heap instructions. Using this heap
+ * and the corresponding instructions, the program reports back whether or not the input is a Heap,
+ * then outputs based on the various Heap action instructions.
+ * Name: Bryan Zanoli
+ * Date: 10/08/2024
  */
 
 import java.util.ArrayList;
@@ -118,8 +120,6 @@ class Main
         //System.out.println("Delete a node from the Heap. Node: " + node);
     }
 
-
-
     public static void main(String[] args) {
 
         // Develop your program here.
@@ -174,15 +174,6 @@ class Main
                     deleteNode(heapArray, Integer.parseInt(commandArr[1]));
             }
         }
-
-
-
-        //Insert nodes (then heapify)
-
-        //Delete nodes (then heapify)
-
-        //Delete the root node (then heapify)
-
     }
 }
 
